@@ -1,42 +1,55 @@
 #!/usr/bin/python3
-class Square:
-    """Defines a square"""
+"""
+    This module defines linked lists
+    return {}
+"""
+
+
+class Square():
+    """square class"""
+
     def __init__(self, size=0):
-        """Initialises the data"""
+        """Initialization class"""
         self.size = size
 
     def area(self):
-        """Returns current square area"""
-        return self.__size**2
+        """Returning the area of the square"""
+        return self.__size ** 2
 
     @property
     def size(self):
-        """Getter method"""
+        """Retrieving the size of the square"""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Setter method"""
-        self.__size = value
-        if type(value) != int:
-            raise TypeError("size must be an integer")
+        """Setting the size of the square"""
+        if not isinstance(value, int) and not isinstance(value, float):
+            raise TypeError("size must be an number")
         if value < 0:
             raise ValueError("size must be >= 0")
-
-    def __lt__(self, other):
-        return self.area() < other.area()
-
-    def __le__(self, other):
-        return self.area() <= other.area()
+        self.__size = value
 
     def __eq__(self, other):
+        """Overload equal operator."""
         return self.area() == other.area()
 
     def __ne__(self, other):
+        """Overload not equal operator."""
         return self.area() != other.area()
 
     def __gt__(self, other):
+        """Overload greater than operator."""
         return self.area() > other.area()
 
+    def __lt__(self, other):
+        """Overload less than operator."""
+        return self.area() < other.area()
+
     def __ge__(self, other):
+        """Overload greater than or equal operator."""
         return self.area() >= other.area()
+
+    def __le__(self, other):
+        """Overload less than or equal operator."""
+        return self.area() <= other.area()
