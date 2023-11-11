@@ -1,6 +1,12 @@
 #!/usr/bin/python3
+"""
+    Module defining square
+    return {}
+"""
+
+
 class Rectangle:
-    """Defines a rectangle
+    """Square class
+       Defines a square and returns nothing
     """
-    def __init__(self):
-        pass
+    pass
