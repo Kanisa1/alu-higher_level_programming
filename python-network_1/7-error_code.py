@@ -1,16 +1,18 @@
 #!/usr/bin/python3
-"""displays the body of the response"""
+"""Sends a request to a given URL and displays the response body.
 
-
-import requests
+Usage: ./7-error_code.py <URL>
+  - Handles HTTP errors.
+"""
 import sys
+import requests
 
 
 if __name__ == "__main__":
-    """sends the variable email"""
     url = sys.argv[1]
-    reply = requests.get(url)
-    if reply.status_code <= 400:
-        print("{}".format(reply.text))
+
+    r = requests.get(url)
+    if r.status_code >= 400:
+        print("Error code: {}".format(r.status_code))
     else:
-        print("Error code: {}".format(reply.status_code))
+        print(r.text)
