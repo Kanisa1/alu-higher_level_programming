@@ -15,6 +15,7 @@ class Base:
     def __init__(self, id=None):
         Base.__nb_objects += 1
         self.id = id
+
     @property
     def id(self):
         """doc"""
@@ -27,6 +28,7 @@ class Base:
             self.__id = self.__nb_objects
         else:
             self.__id = value
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Json string"""
@@ -35,6 +37,7 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """list objs's JSON string
@@ -48,6 +51,7 @@ class Base:
                 for obj in list_objs:
                     list_objs_dict.append(obj.to_dictionary())
                 file.write(cls.to_json_string(list_objs_dict))
+
     @staticmethod
     def from_json_string(json_string):
         """this returns the list of the
@@ -57,6 +61,7 @@ class Base:
             return list()
         else:
             return json.loads(json_string)
+
     @classmethod
     def create(cls, **dictionary):
         """this returns an instance with
@@ -67,6 +72,7 @@ class Base:
             dummy_instance = cls(4)
         dummy_instance.update(**dictionary)
         return dummy_instance
+
     @classmethod
     def load_from_file(cls):
         """this returns a list of instances
@@ -82,4 +88,4 @@ class Base:
         instances_list = []
         for instance_dict in deserialized_content:
             instances_list.append(cls.create(**instance_dict))
- return instances_list   
+        return instances_list
