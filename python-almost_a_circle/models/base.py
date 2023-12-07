@@ -15,7 +15,6 @@ class Base:
     def __init__(self, id=None):
         Base.__nb_objects += 1
         self.id = id
-
     @property
     def id(self):
         """doc"""
