@@ -89,4 +89,3 @@ class Base:
         for instance_dict in deserialized_content:
             instances_list.append(cls.create(**instance_dict))
         return instances_list
-       
