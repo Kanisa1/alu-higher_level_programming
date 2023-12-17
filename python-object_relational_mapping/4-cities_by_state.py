@@ -32,6 +32,6 @@ if __name__ == '__main__':
 
         rows = cur.fetchall()
 
-                                                                                                                                   1,18          Top if rows is not None:
+         if rows is not None:
         for row in rows:
             print(row)
