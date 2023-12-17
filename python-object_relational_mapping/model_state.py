@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-'''a python file that contains the class definition of a
-State and an instance Base = declarative_base()'''
+'''
+    defining a database with sql-alchemy
+    states Database table
+'''
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
@@ -8,8 +10,8 @@ Base = declarative_base()
 
 
 class State(Base):
-    '''the class definition'''
+    '''A class defination of a table in the sql'''
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-    name = Column(String(128), nullable=False))
+    name = Column(String(128), nullable=False)
